@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "license": "ISC",
-  "homepage": "https://github.com/june11084/Calculator-gulp",
+  "homepage": "https://github.com/june11084/Age-Calculator",
   "ignore": [
     "**/.*",
     "node_modules",

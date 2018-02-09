@@ -2,39 +2,56 @@ export class Age {
    constructor(){
    }
    yearsToSeconds(yearsOld){
-      let age = yearsOld * 31536000
+      const seconds = 31536000;
+      let age = Math.floor(yearsOld * seconds);
       return age;
    }
    humanToMercury(yearsOld){
-      let age = ((yearsOld * 31536000)/0.24)/31536000;
+      const seconds = 31536000;
+      const mercury = 0.24;
+      let age = Math.floor(((yearsOld * seconds)/mercury)/seconds);
       return age;
    }
    yearsLeftOnMercury(yearsOld, lifeExpectancy){
-      let age = (((lifeExpectancy * 31536000)/0.24)/31536000) - (((yearsOld * 31536000)/0.24)/31536000);
+      const seconds = 31536000;
+      const mercury = 0.24;
+      let age = Math.floor((((lifeExpectancy * seconds)/mercury)/seconds) - (((yearsOld * seconds)/mercury)/seconds));
       return age;
    }
    humanToVenus(yearsOld){
-      let age = ((yearsOld * 31536000)/0.62)/31536000;
+      const seconds = 31536000;
+      const venus = 0.62;
+      let age = Math.floor(((yearsOld * seconds)/venus)/seconds);
       return age;
    }
    yearsLeftOnVenus(yearsOld, lifeExpectancy){
-      let age = (((lifeExpectancy * 31536000)/0.62)/31536000) - (((yearsOld * 31536000)/0.62)/31536000);
+      const seconds = 31536000;
+      const venus = 0.62;
+      let age = Math.floor((((lifeExpectancy * seconds)/venus)/seconds) - (((yearsOld * seconds)/venus)/seconds));
       return age;
    }
    humanToMars(yearsOld){
-      let age = ((yearsOld * 31536000)/1.88)/31536000;
+      const seconds = 31536000;
+      const mars = 1.88;
+      let age = Math.floor(((yearsOld * seconds)/mars)/seconds);
       return age;
    }
    yearsLeftOnMars(yearsOld, lifeExpectancy){
-      let age = (((lifeExpectancy * 31536000)/1.88)/31536000) - (((yearsOld * 31536000)/1.88)/31536000);
+      const seconds = 31536000;
+      const mars = 1.88;
+      let age = Math.floor((((lifeExpectancy * seconds)/mars)/seconds) - (((yearsOld * seconds)/mars)/seconds));
       return age;
    }
    humanToJupiter(yearsOld){
-      let age = ((yearsOld * 31536000)/11.86)/31536000;
+      const seconds = 31536000;
+      const jupiter = 11.86;
+      let age = Math.floor(((yearsOld * seconds)/jupiter)/seconds);
       return age;
    }
    yearsLeftOnJupiter(yearsOld, lifeExpectancy){
-      let age = (((lifeExpectancy * 31536000)/11.86)/31536000) - (((yearsOld * 31536000)/11.86)/31536000);
+      const seconds = 31536000;
+      const jupiter = 11.86;
+      let age = Math.floor((((lifeExpectancy * seconds)/jupiter)/seconds) - (((yearsOld * seconds)/jupiter)/seconds));
       return age;
    }
    daysUntilNextBirthday(month, day, planet){
@@ -45,9 +62,9 @@ export class Age {
       if( today.getTime() > bday.getTime()) {
           bday.setFullYear(bday.getFullYear()+1);
       }
-      diff = bday.getTime()-today.getTime();
-      days = Math.floor(diff/(1000*60*60*24));
-      nextBirthday = 365*((1 - ((365 - days)/365))/planet);
+      let diff = bday.getTime()-today.getTime();
+      let days = Math.floor(diff/(1000*60*60*24));
+      nextBirthday = Math.floor(365*((1 - ((365 - days)/365))/planet));
       return nextBirthday;
    }
 };
