@@ -27,12 +27,14 @@ $(document).ready(function() {
     let daysUntilNextBirthdayOnJupiter = ageObject.daysUntilNextBirthday(month,day,jupiter);
     $("#test").text(age + " " + month + "/" +day + " " + lifeExpectancy);
     if(yearsLeftOnJupiter<1){
+      $("#result").hide();
        $("#mercury").text("You havev already lived pass your expected years, congradulations!");
     }else {
+      $("#result").show();
       $("#mercury").text("Your age on Mercury is: " + humanToMercury + ", " + "you have: " + yearsLeftOnMercury + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnMercury + " days.");
-      $("#venus").text("Your age on Venus is: " + humanToMercury + ", " + "you have: " + yearsLeftOnVenus + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnVenus + " days.");
-      $("#mars").text("Your age on Mars is: " + humanToMercury + ", " + "you have: " + yearsLeftOnMars + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnMars + " days.");
-      $("#jupiter").text("Your age on Jupiter is: " + humanToMercury + ", " + "you have: " + yearsLeftOnJupiter + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnJupiter + " days.");
+      $("#venus").text("Your age on Venus is: " + humanToVenus + ", " + "you have: " + yearsLeftOnVenus + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnVenus + " days.");
+      $("#mars").text("Your age on Mars is: " + humanToMars + ", " + "you have: " + yearsLeftOnMars + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnMars + " days.");
+      $("#jupiter").text("Your age on Jupiter is: " + humanToJupiter + ", " + "you have: " + yearsLeftOnJupiter + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnJupiter + " days.");
    }
   });
 });
