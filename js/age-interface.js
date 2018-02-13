@@ -25,11 +25,12 @@ $(document).ready(function() {
     let daysUntilNextBirthdayOnVenus = ageObject.daysUntilNextBirthday(month,day,venus);
     let daysUntilNextBirthdayOnMars = ageObject.daysUntilNextBirthday(month,day,mars);
     let daysUntilNextBirthdayOnJupiter = ageObject.daysUntilNextBirthday(month,day,jupiter);
-    $("#test").text(age + " " + month + "/" +day + " " + lifeExpectancy);
     if(yearsLeftOnJupiter<1){
-      $("#result").hide();
-       $("#mercury").text("You havev already lived pass your expected years, congradulations!");
+       $("#longLived").show();
+       $("#result").hide();
+       $("#congradulations").text("You havev already lived pass your expected years, congradulations!");
     }else {
+      $("#longLived").hide();
       $("#result").show();
       $("#mercury").text("Your age on Mercury is: " + humanToMercury + ", " + "you have: " + yearsLeftOnMercury + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnMercury + " days.");
       $("#venus").text("Your age on Venus is: " + humanToVenus + ", " + "you have: " + yearsLeftOnVenus + " Mercury years to live, your birthday is in " + daysUntilNextBirthdayOnVenus + " days.");
